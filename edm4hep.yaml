@@ -607,9 +607,13 @@ datatypes:
       - int32_t ncerenkov                    // number of cerenkov hits
       - int32_t nscintillator                // number of scint hits
     VectorMembers:
-      - int32_t nwavelen_cer                 // number of cerenkov wavelength hits
-      - int32_t nwavelen_scint               // number of scint wavelength hits
-      - int32_t ntime_cer                    // number of cerenkov time hits
-      - int32_t ntime_scint                  // number of scint hits
+      - int32_t nwavelenbin_cer                 // number of cerenkov wavelength hits
+      - int32_t nwavelencount_cer                 // number of cerenkov wavelength hits
+      - int32_t nwavelenbin_scint               // number of scint wavelength hits
+      - int32_t nwavelencount_scint               // number of scint wavelength hits
+      - int32_t ntimebin_cer                    // number of cerenkov time hits
+      - int32_t ntimecount_cer                    // number of cerenkov time hits
+      - int32_t ntimebin_scint                  // number of scint hits
+      - int32_t ntimecount_scint                  // number of scint hits
     OneToManyRelations:
       - edm4hep::CaloHitContribution contributions  // Monte Carlo step contributions
