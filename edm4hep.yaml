@@ -593,54 +593,6 @@ datatypes:
       - edm4hep::Track track           //the corresponding track.
 
 
-  # # ------------- DRSimCalorimeterHit
-  # edm4hep::SimDRCalorimeterHit:
-  #   Description: "Simulated dual-readout calorimeter hit"
-  #   Author: "Wonyong Chung"
-  #   Members:
-  #     - uint64_t cellID                      // detector cellID
-  #     - float energy [GeV]                   // energy of the hit
-  #     - edm4hep::Vector3f position [mm]      // position of the calorimeter cell in world coords
-  #     - int32_t eta                          // detector cell eta
-  #     - int32_t phi                          // detector cell phi
-  #     - int32_t depth                        // detector cell depth
-  #     - int32_t ncerenkov                    // number of cerenkov hits
-  #     - int32_t nscintillator                // number of scint hits
-  #   VectorMembers:
-  #     - int32_t nwavelen_cer                 // number of cerenkov wavelength hits
-  #     - int32_t nwavelen_scint               // number of scint wavelength hits
-  #     - int32_t ntime_cer                    // number of cerenkov time hits
-  #     - int32_t ntime_scint                  // number of scint hits
-  #   OneToManyRelations:
-  #     - edm4hep::CaloHitContribution contributions  // Monte Carlo step contributions
-
-
-  # # ------------- DRSimCalorimeterHitSparse
-  # edm4hep::SimDRCalorimeterHitSparse:
-  #   Description: "Simulated dual-readout calorimeter hit - sparse"
-  #   Author: "Wonyong Chung"
-  #   Members:
-  #     - uint64_t cellID                      // detector cellID
-  #     - float energy [GeV]                   // energy of the hit
-  #     - edm4hep::Vector3f position [mm]      // position of the calorimeter cell in world coords
-  #     - int32_t eta                          // detector cell eta
-  #     - int32_t phi                          // detector cell phi
-  #     - int32_t depth                        // detector cell depth
-  #     - int32_t ncerenkov                    // number of cerenkov hits
-  #     - int32_t nscintillator                // number of scint hits
-  #   VectorMembers:
-  #     - int32_t nwavelenbin_cer                 // number of cerenkov wavelength hits
-  #     - int32_t nwavelencount_cer                 // number of cerenkov wavelength hits
-  #     - int32_t nwavelenbin_scint               // number of scint wavelength hits
-  #     - int32_t nwavelencount_scint               // number of scint wavelength hits
-  #     - int32_t ntimebin_cer                    // number of cerenkov time hits
-  #     - int32_t ntimecount_cer                    // number of cerenkov time hits
-  #     - int32_t ntimebin_scint                  // number of scint hits
-  #     - int32_t ntimecount_scint                  // number of scint hits
-  #   OneToManyRelations:
-  #     - edm4hep::CaloHitContribution contributions  // Monte Carlo step contributions
-
-
   # ------------- DRSimCalorimeterHit
   edm4hep::SimDRCalorimeterHit:
     Description: "Simulated dual-readout calorimeter hit"
@@ -652,6 +604,7 @@ datatypes:
       - int32_t eta                          // detector cell eta
       - int32_t phi                          // detector cell phi
       - int32_t depth                        // detector cell depth
+      - int32_t system                       // detector cell system
       - int32_t ncerenkov                    // number of cerenkov hits
       - int32_t nscintillator                // number of scint hits
       - std::array<int32_t, 6000> nwavelen_cer                 // number of cerenkov wavelength hits
@@ -660,28 +613,3 @@ datatypes:
       - std::array<int32_t, 6000> ntime_scint                  // number of scint hits
     OneToManyRelations:
       - edm4hep::CaloHitContribution contributions  // Monte Carlo step contributions
-
-
-  # ------------- DRSimCalorimeterHitSparse
-  # edm4hep::SimDRCalorimeterHitSparse:
-  #   Description: "Simulated dual-readout calorimeter hit - sparse"
-  #   Author: "Wonyong Chung"
-  #   Members:
-  #     - uint64_t cellID                      // detector cellID
-  #     - float energy [GeV]                   // energy of the hit
-  #     - edm4hep::Vector3f position [mm]      // position of the calorimeter cell in world coords
-  #     - int32_t eta                          // detector cell eta
-  #     - int32_t phi                          // detector cell phi
-  #     - int32_t depth                        // detector cell depth
-  #     - int32_t ncerenkov                    // number of cerenkov hits
-  #     - int32_t nscintillator                // number of scint hits
-  #     - std::vector<int32_t> nwavelenbin_cer                 // number of cerenkov wavelength hits
-  #     - std::vector<int32_t> nwavelencount_cer                 // number of cerenkov wavelength hits
-  #     - std::vector<int32_t> nwavelenbin_scint               // number of scint wavelength hits
-  #     - std::vector<int32_t> nwavelencount_scint               // number of scint wavelength hits
-  #     - std::vector<int32_t> ntimebin_cer                    // number of cerenkov time hits
-  #     - std::vector<int32_t> ntimecount_cer                    // number of cerenkov time hits
-  #     - std::vector<int32_t> ntimebin_scint                  // number of scint hits
-  #     - std::vector<int32_t> ntimecount_scint                  // number of scint hits
-  #   OneToManyRelations:
-  #     - edm4hep::CaloHitContribution contributions  // Monte Carlo step contributions
