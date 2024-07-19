@@ -117,7 +117,7 @@ nlohmann::json processEvent(const podio::Frame& frame, std::vector<std::string>&
       insertIntoJson<edm4hep::RecDqdxCollection>(jsonDict, coll, collList[i]);
     } else if (coll->getTypeName() == "edm4hep::SimDRCalorimeterHitCollection") {
       insertIntoJson<edm4hep::SimDRCalorimeterHitCollection>(jsonDict, coll, collList[i]);
-    }
+    } 
     // Associations
     else if (coll->getTypeName() == "edm4hep::MCRecoParticleAssociationCollection") {
       insertIntoJson<edm4hep::MCRecoParticleAssociationCollection>(jsonDict, coll, collList[i]);
